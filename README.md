@@ -1,23 +1,22 @@
-# Bust-The-Ghost
+# Bust the Ghost - CSC 4301 - Spring 2022 - Dr. Tajjedine Rachidi
 
+## Introduction
 
-## Description
-In this project, we used Unity to implement/reproduce  "Bust the Ghost" game. <br />
-* Create a 8x 20 grid <br />
-* Have the ghost be placed in one of the cells according to a prior distribution of Ghost over location P(Ghost). <br />
-    * Use a uniform distribution to start with. <br />
-* when clicking  a cell, the player gets a color red/green/orange/yellow depending on how the far is the ghost is from the clicked cell. <br />
+In this project, Mohamed Amine Eloudghiri and I will be implementing a simple bust the ghost game using Unity and Probabilistic Programming. The game will be played in the Unity editor. It consists of an 8x20 grid of blocks that can be clicked to attempt to bust the ghost. The ghost is set randomly within the grid. The player will have to click on blocks to attempt to find the ghost. The game ends if the user does not find the ghost.
 
-- [x] On the ghost: red <br />
-- [x] 1 or 2 cells away: orange <br /> 
-- [x] 3 or 4 cells away: yellow <br />
-- [x] 5+ cells away: green <br />
+## Color Code
+ - **Red**: The ghost.
+ - **Orange**: 1 or 2 cells away from the ghost.
+ - **Yellow**: 3 or 4 cells away from the ghost.
+ - **Green**: 5 or 6 cells away from the ghost.
+## Demo Video
 
-* For this, define and use a *conditional probability distribution* P(Colour/Distance from Ghost). <br />
-    * Use this probability to decide on the color to display. <br />
-* After each click "t", the  *Posterior Probability* of the Ghost P(Ghost/ Colour) should be updated and displayed on the cells using *Bayesian inference*: <br />
-    * P(Ghost_t)=P(Ghost/Color_t)=P(Ghost_t-1)*P(Colour/Distance from Ghost). <br />
-    * P(Ghost_0)= P(Ghost/Color_0)= P(Ghost) the prior probability. <br />
+[![](https://img.youtube.com/vi/Gumdupj4l30/0.jpg)](https://www.youtube.com/watch?v=Gumdupj4l30)
 
-* Do not forget to Normalize! <br />
-* User can decide to "bust" a cell if ghost is in the cell; the player wins otherwise he/she looses. <br />
+## Probabilistic Programming
+
+The Posterior Probability of the Ghost `P(Ghost / Color)` is updated and presented on the cells using Bayesian inference after each click "t."
+The used bayesian formula to update each block is the following:
+
+#### `P(Ghost_t)=P(Ghost/Color_t)=P(Ghost_t-1)*P(Color/Distance from Ghost)`
+
